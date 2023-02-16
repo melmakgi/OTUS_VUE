@@ -1,14 +1,14 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
+import {createApp} from 'vue'
 import App from './App.vue'
-import router from './router'
+import Header from "@/components/global/UHeader.vue";
+import Footer from "@/components/global/UFooter.vue";
+import globalComponents from './components/global';
 
-import './assets/main.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
+const app = createApp(App);
+app.use(globalComponents);
+app.component('Header', Header);
+app.component('Footer', Footer)
 app.mount('#app')
