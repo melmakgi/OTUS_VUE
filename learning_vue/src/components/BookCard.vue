@@ -1,6 +1,15 @@
 <script setup>
 import UButton from "@/components/global/UButton.vue";
 
+const props = defineProps({
+  book: {
+    type: Object,
+    default() {
+      return {};
+    }
+  }
+})
+
 </script>
 
 <template>
@@ -12,15 +21,7 @@ import UButton from "@/components/global/UButton.vue";
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <!--          <h5 class="card-title">{{ bookName }}</h5>
-                    <p class="card-text m-0">Автор: {{ author }}</p>
-                    <p class="card-text m-0">Автор: {{ authors }}</p>
-                    <p class="card-text m-0">Кракткое описание: {{ shortDes }}</p>
-                    <p class="card-text m-0">Издатель: {{ publisher }}</p>
-                    <p class="card-text m-0">Цена: {{ price }}</p>
-                    <p class="card-text m-0"><small class="text-muted">Тег: {{ teg }}</small></p>
-                    <p class="card-text m-0"><small class="text-muted">Категория: {{ concat }}</small></p>
-                    <p class="card-text"><small class="text-muted">ISBN: {{ isbn }}</small></p>-->
+          <h1>{{ props.title }}</h1>
           <UButton>Купить</UButton>
         </div>
       </div>

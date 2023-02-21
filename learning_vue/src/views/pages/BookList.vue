@@ -1,21 +1,25 @@
 <script setup>
 import {reactive, ref} from "vue";
 import axios from "axios";
+import BookCard from "@/components/BookCard.vue";
 
 const query = ref('');
 let map = new Map();
 const submit = () => {
-  const search =
-      axios
-          .get('https://www.googleapis.com/books/v1/volumes?q='
-              + query.value
-              + '&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'
-              + '&maxResults=3')
-          .then(responce => {
-            console.log(responce.data.items)
-            searchRes(responce)
-          })
-          .catch(err => console.log(err));
+  if (query.value) {
+    const search =
+        axios
+            .get('https://www.googleapis.com/books/v1/volumes?q='
+                + query.value
+                + '&key=AIzaSyA6SaT23KNiiA6DnUfUQTvFeyAcQEkwnSU'
+                + '&maxResults=3')
+            .then(responce => {
+              if (responce.data.items)
+                console.log(responce.data.items)
+              searchRes(responce)
+            })
+            .catch(err => console.log(err));
+  } else alert('Что будем искать?')
 }
 
 function searchRes(responce) {
@@ -28,9 +32,9 @@ function searchRes(responce) {
       authors: [responce.data.items[key].volumeInfo.authors],
       category: responce.data.items[key].volumeInfo.categories,
       publisher: responce.data.items[key].volumeInfo.publisher,
-      previewLink: responce.data.items[key].volumeInfo.previewLink, // тут получаю ошибку
-      etag: responce.data.items[key].item.volumeInfo.etag,
-      imageLinks: responce.data.items[key].item.imageLinks // imageLinks - это объект
+      etag: responce.data.items[key].etag,
+      previewLink: responce.data.items[key].volumeInfo.previewLink,
+      imageLinks: responce.data.items[key].volumeInfo.imageLinks
     }
     map.set(key, book);
     console.log(map.get(key));
@@ -50,14 +54,11 @@ function searchRes(responce) {
           </div>
         </form>
       </div>
-      <div class="book-list">
-        <h2 class="text-center">Результаты поиска</h2>
-        <div id="list-output" class="">
+      <div class="book-list" v-for="book in map" key="map.get(1)">
+        <div id="list-output">
           <div className="container">
-            <!--            <Card book={bookData}/>-->
-
+            <BookCard book></BookCard>
           </div>
-
         </div>
       </div>
     </div>
