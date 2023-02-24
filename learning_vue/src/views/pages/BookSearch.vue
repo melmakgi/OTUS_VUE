@@ -1,7 +1,7 @@
 <script setup>
 import {reactive, ref, onMounted} from "vue";
 import axios from "axios";
-import BookCard from "@/components/BookCard.vue";
+import BookCard from "@/components/BookItem.vue";
 
 const query = ref('');
 let books = reactive({});
@@ -15,6 +15,7 @@ const submitForm = () => {
             + '&maxResults=10')
         .then(responce => {
           if (responce.data.items)
+            console.log(responce.data.items)
             books = responce.data.items;
         })
         .catch(err => console.log(err));

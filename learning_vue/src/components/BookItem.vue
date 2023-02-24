@@ -41,7 +41,7 @@ function arrayString(array) {
   <div class="card h-100">
     <div class="row g-0 h-100 rounded">
       <div class="col-md-4 border rounded">
-        <img :src="image" alt="Нет изображения">
+        <img v-bind:src="image" alt="Нет изображения">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -55,7 +55,7 @@ function arrayString(array) {
       </div>
     </div>
     <div class="card-footer text-center">
-      <a :href="previewLink" class="btn btn-primary" target="_blank">Просмотр</a>
+      <a v-bind:href="previewLink" class="btn btn-primary" target="_blank">Просмотр</a>
     </div>
   </div>
 </template>

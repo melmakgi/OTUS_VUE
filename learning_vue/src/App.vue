@@ -1,5 +1,5 @@
 <script setup>
-import BookList from "@/views/pages/BookList.vue";
+import BookList from "@/views/pages/BookSearch.vue";
 </script>
 
 <template>
