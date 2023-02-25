@@ -1,11 +1,14 @@
 <script setup>
-import BookList from "@/views/pages/BookSearch.vue";
+import BookSearch from "@/views/pages/BookSearch.vue";
+import UFooter from "@/components/global/UFooter.vue";
 </script>
 
 <template>
-  <BookList></BookList>
+  <div class="container">
+    <BookSearch></BookSearch>
+  </div>
+  <UFooter>&copy; 2023 OTUS, Vue.js</UFooter>
 </template>
 
 <style scoped>
-
 </style>

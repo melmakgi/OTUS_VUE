@@ -24,7 +24,6 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div class="container">
     <div id="title" class="center">
       <h1 id="header" class="text-center mt-5">Поиск книг</h1>
       <form class="row" @submit.prevent.stop='submitForm'>
@@ -41,8 +40,6 @@ const submitForm = () => {
         <BookCard v-bind:bookData="book"/>
       </div>
     </div>
-
-  </div>
 </template>
 
 <style scoped>
