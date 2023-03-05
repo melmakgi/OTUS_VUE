@@ -25,7 +25,7 @@ const {modelValue} = defineProps({
 const value = ref(modelValue);
 
 watch(value, () => {
-      emits('update:modelValue', value)
+      emits('update:modelValue', value.value)
     }
 )
 </script>
@@ -36,16 +36,17 @@ watch(value, () => {
            v-if="type !== 'textarea'"
            :type="type"
            :placeholder="placeholder"
-           v-model='value'
+           v-model="value"
     />
     <textarea class="form-control mb-3"
               v-else
               rows="5"
-              placeholder="placeholder"
+              :placeholder="placeholder"
+              v-model="value"
     ></textarea>
   </div>
 </template>
 
-<style>
+<style scoped>
 
 </style>

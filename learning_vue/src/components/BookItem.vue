@@ -35,6 +35,7 @@ function arrayString(array) {
     return array.join(", ");
   }
 }
+
 </script>
 
 <template>

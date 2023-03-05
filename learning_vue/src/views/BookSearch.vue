@@ -1,11 +1,10 @@
 <script setup>
-import {reactive, ref, onMounted} from "vue";
+import {ref} from "vue";
 import axios from "axios";
-import BookCard from "@/components/BookItem.vue";
+import BookItem from "@/components/BookItem.vue";
 
 const query = ref('');
-let books = reactive({});
-
+const books = ref({});
 const submitForm = () => {
   if (query.value) {
     axios
@@ -15,8 +14,7 @@ const submitForm = () => {
             + '&maxResults=10')
         .then(responce => {
           if (responce.data.items)
-            console.log(responce.data.items)
-            books = responce.data.items;
+            books.value = responce.data.items;
         })
         .catch(err => console.log(err));
   } else alert('Что будем искать?')
@@ -24,8 +22,7 @@ const submitForm = () => {
 </script>
 
 <template>
-    <div id="title" class="center">
-      <h1 id="header" class="text-center mt-5">Поиск книг</h1>
+    <div class="mt-3">
       <form class="row" @submit.prevent.stop='submitForm'>
         <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
           <input id="search-box" type="search" class="form-control" placeholder="Поиск книг..." v-model.trim="query">
@@ -36,8 +33,8 @@ const submitForm = () => {
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
       <div class="col"
            v-for="book in books"
-           :key="book.id">
-        <BookCard v-bind:bookData="book"/>
+           v-bind:key="book.id">
+        <BookItem v-bind:bookData="book"/>
       </div>
     </div>
 </template>

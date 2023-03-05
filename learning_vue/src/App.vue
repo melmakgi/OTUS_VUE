@@ -1,11 +1,12 @@
 <script setup>
-import BookSearch from "@/views/pages/BookSearch.vue";
 import UFooter from "@/components/global/UFooter.vue";
+import UNavbar from "@/components/global/UNavbar.vue";
 </script>
 
 <template>
+  <UNavbar></UNavbar>
   <div class="container">
-    <BookSearch></BookSearch>
+    <RouterView/>
   </div>
   <UFooter>&copy; 2023 OTUS, Vue.js</UFooter>
 </template>
