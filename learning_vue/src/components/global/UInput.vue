@@ -17,6 +17,7 @@ const {modelValue} = defineProps({
       'tel',
       'email',
       'search',
+      'date',
       'textarea'
     ].includes(val)
   }

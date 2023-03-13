@@ -44,7 +44,7 @@
                 </li>
                 <hr class="dropdown-divider">
                 <li>
-                  <RouterLink class="dropdown-item" to="/addbook">Добавить автора</RouterLink>
+                  <RouterLink class="dropdown-item" to="/addauthor">Добавить автора</RouterLink>
                 </li>
               </ul>
             </li>
