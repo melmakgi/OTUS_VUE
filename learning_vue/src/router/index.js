@@ -7,32 +7,48 @@ const router = createRouter({
         {
             path: '/',
             name: 'home',
-            component: Home
+            component: Home,
+            alias: '/home'
+        },
+        {
+            path: '/h',
+            redirect: '/home'
         },
         {
             path: '/books',
-            name: 'Витрина книг',
-            component: () => import('@/views/BookList.vue')
+            name: 'books',
+            component: () => import('@/views/BookList.vue'),
+            alias: encodeURI('/книги')
         },
         {
             path: '/addbook',
-            name: 'Добавить книгу',
-            component: () => import('@/views/AddBook.vue')
+            name: 'addBook',
+            component: () => import('@/views/AddBook.vue'),
+            alias: encodeURI('/добавление-книги')
         },
         {
             path: '/authors',
-            name: 'Авторы книг',
-            component: () => import('@/views/AuthorsList.vue')
+            name: 'authors',
+            component: () => import('@/views/AuthorsList.vue'),
+            alias: encodeURI('/авторы')
         },
         {
             path: '/addauthor',
-            name: 'Добавить автора',
-            component: () => import('@/views/AddAuthor.vue')
+            name: 'addAuthor',
+            component: () => import('@/views/AddAuthor.vue'),
+            alias: encodeURI('/добавить-автора')
         },
         {
             path: '/about',
-            name: 'О ДЗ',
-            component: () => import('@/views/About.vue')
+            name: 'about',
+            component: () => import('@/views/About.vue'),
+            alias: encodeURI('/o-дз')
+        },
+        {
+            path:'/:patchMatch(.*)*',
+            name: 'not-found',
+            component: () => import('@/views/NotFound.vue'),
+            alias: '/404'
         }
     ]
 })

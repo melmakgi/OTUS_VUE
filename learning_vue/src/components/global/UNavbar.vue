@@ -20,18 +20,18 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <RouterLink class="nav-link active" aria-current="page" to="/">Google Book</RouterLink>
+              <RouterLink class="nav-link active" aria-current="page" :to="{name: 'home'}">Google Book</RouterLink>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                  aria-expanded="false">Книги</a>
               <ul class="dropdown-menu">
                 <li>
-                  <RouterLink class="dropdown-item" to="/books">Витрина книг</RouterLink>
+                  <RouterLink class="dropdown-item" :to="{name: 'books'}">Витрина книг</RouterLink>
                 </li>
                 <hr class="dropdown-divider">
                 <li>
-                  <RouterLink class="dropdown-item" to="/addbook">Добавить книгу</RouterLink>
+                  <RouterLink class="dropdown-item" :to="{name: 'addBook'}">Добавить книгу</RouterLink>
                 </li>
               </ul>
             </li>
@@ -40,16 +40,16 @@
                  aria-expanded="false">Авторы</a>
               <ul class="dropdown-menu">
                 <li>
-                  <RouterLink class="dropdown-item" to="/authors">Авторы книг</RouterLink>
+                  <RouterLink class="dropdown-item" :to="{name: 'authors'}">Авторы книг</RouterLink>
                 </li>
                 <hr class="dropdown-divider">
                 <li>
-                  <RouterLink class="dropdown-item" to="/addauthor">Добавить автора</RouterLink>
+                  <RouterLink class="dropdown-item" :to="{name: 'addAuthor'}">Добавить автора</RouterLink>
                 </li>
               </ul>
             </li>
             <li>
-              <RouterLink class="nav-link" to="/about">О ДЗ</RouterLink>
+              <RouterLink class="nav-link" :to="{name: 'about'}">О ДЗ</RouterLink>
             </li>
           </ul>
         </div>
