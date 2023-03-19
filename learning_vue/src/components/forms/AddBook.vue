@@ -1,14 +1,9 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div>
     <h1>Добавление книг</h1>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

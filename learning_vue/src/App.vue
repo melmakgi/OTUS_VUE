@@ -6,10 +6,9 @@ import UNavbar from "@/components/global/UNavbar.vue";
 <template>
   <UNavbar></UNavbar>
   <div class="container">
-    <RouterView/>
+    <RouterView />
   </div>
   <UFooter>&copy; 2023 OTUS, Vue.js</UFooter>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

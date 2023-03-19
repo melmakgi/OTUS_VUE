@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component > Renders All 1`] = `
+"<select class=\\"form-select form-select-sm mb-3\\" items=\\"[object Object],[object Object],[object Object],[object Object],[object Object]\\">
+  <option disabled=\\"\\">Выберите автора для просмотра его книг</option>
+  <option value=\\"Толстой Лев Николаевич\\">Толстой Лев Николаевич</option>
+  <option value=\\"Иванов Алексей Викторович\\">Иванов Алексей Викторович</option>
+</select>"
+`;
