@@ -39,7 +39,7 @@
               <RouterLink
                 class="nav-link active"
                 aria-current="page"
-                :to="{ name: 'home' }"
+                :to="{ name: 'googleBooks' }"
                 >Google Book</RouterLink
               >
             </li>

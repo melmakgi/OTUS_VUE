@@ -23,7 +23,7 @@ const submitForm = () => {
 </script>
 
 <template>
-  <div class="mt-3">
+  <div class="mt-3 container-fluid">
     <form class="row" @submit.prevent.stop="submitForm">
       <div id="input" class="input-group mx-auto col-lg-6 col-md-8 col-sm-12">
         <input

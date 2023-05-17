@@ -77,6 +77,7 @@ export function addBook(objBook) {
   const item = Object.assign({}, objBook);
   item.id = uniqueId();
   books.value.push(item);
+  alert("Книга добавлена");
 }
 
 export function delBookItem(id) {

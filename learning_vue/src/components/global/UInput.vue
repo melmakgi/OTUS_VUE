@@ -12,6 +12,7 @@ const { modelValue } = defineProps({
     validator: (val) =>
       [
         "text",
+        "number",
         "password",
         "tel",
         "email",
@@ -37,6 +38,7 @@ watch(value, () => {
       :type="type"
       :placeholder="placeholder"
       v-model="value"
+      required
     />
     <textarea
       class="form-control mb-3"

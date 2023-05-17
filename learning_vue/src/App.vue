@@ -4,11 +4,14 @@ import UNavbar from "@/components/global/UNavbar.vue";
 </script>
 
 <template>
-  <UNavbar></UNavbar>
-  <div class="container">
-    <RouterView />
+  <div class="d-flex flex-column min-vh-100">
+    <UNavbar></UNavbar>
+    <main class="flex-fill container">
+      <RouterView/>
+    </main>
+    <UFooter>&copy; 2023 OTUS, Vue.js</UFooter>
   </div>
-  <UFooter>&copy; 2023 OTUS, Vue.js</UFooter>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>

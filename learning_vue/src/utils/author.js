@@ -31,5 +31,5 @@ export function addAuthor(objAuthor) {
   const item = Object.assign({}, objAuthor);
   item.id = uniqueId();
   authors.value.push(item);
-  console.log(authors.value);
+  alert("Автор добавлен");
 }

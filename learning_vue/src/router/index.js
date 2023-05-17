@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/BookSearch.vue";
+import Home from "@/views/BookList.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,6 +13,11 @@ const router = createRouter({
     {
       path: "/h",
       redirect: "/home",
+    },
+    {
+      path: "/googleBooks",
+      name: "googleBooks",
+      component: () => import("@/views/BookSearch.vue"),
     },
     {
       path: "/books",
